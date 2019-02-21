@@ -16,5 +16,9 @@
 });*/
 
 Route::get('/', function () {
-    return view('principal');
+    return view('templates/base');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
