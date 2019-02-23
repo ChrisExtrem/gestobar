@@ -9,6 +9,11 @@
 
     <title>@yield('title',"Title Default") | Gestobar</title>
 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -24,18 +29,21 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    @yield('title',"Laravel Default")
-                </a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
+                    <nav aria-label="breadcrumb" class="navbar navbar-expand-md navbar-light navbar-laravel p-0"> <!--BreadCrumb-->
+                        <div class="container">
+                            <ol class="breadcrumb py-0 mb-0" style="background-color:white">
+                                <li class="breadcrumb-item"><a class="navbar-brand" href="{{ url('/') }}">Gestobar</a></li>
+                                @yield('ruta_items')
+                            </ol>
+                        </div>
+                    </nav><!--End BreadCrumb-->
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -72,12 +80,7 @@
                 </div>
             </div>
         </nav>
-        <nav aria-label="breadcrumb" class="h-100 rounded" style="background-color:#e9ecef;"><!--BreadCrumb-->
-            <ol class="breadcrumb pull-right">
-                <li class="breadcrumb-item"><a href="index.html">GestoBar</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Principal</li>
-            </ol>
-        </nav><!--End BreadCrumb-->
+
     </header>
 
     <main class="py-4">
@@ -87,6 +90,9 @@
     <footer>
 
     </footer>
+
+
+
 
 </body>
 </html>
