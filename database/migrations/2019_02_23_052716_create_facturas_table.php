@@ -16,6 +16,11 @@ class CreateFacturasTable extends Migration
         Schema::create('facturas', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+
+            //$table->integer('total');
+
+            //$table->integer('pedido_id')->unsigned();
+            //$table->foreign('pedido_id')->references('id')->on('pedidos');
         });
     }
 

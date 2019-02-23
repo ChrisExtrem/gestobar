@@ -16,6 +16,13 @@ class CreatePedidosTable extends Migration
         Schema::create('pedidos', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+
+            //$table->string('cliente',100);
+            //$table->integer('mesa')->unsigned();
+
+            //$table->integer('reserva_id')->unsigned();
+            //$table->foreing('reserva_id')->references('id')->on('reservas');
+
         });
     }
 
