@@ -17,9 +17,9 @@ class CreateProductosTable extends Migration
             $table->increments('id');
             $table->timestamps();
 
-            $table->string('name',100);
+            $table->string('nombre',100);
             $table->string('descripcion',250);
-            $table->double('precio',8,2);
+            $table->float('precio',8,2);
 
             $table->integer('categoria_id')->unsigned();
             $table->foreign('categoria_id')->references('id')->on('categorias');

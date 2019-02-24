@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
         //Seed usando Factorias
         $users = factory(App\User::class, 3)->create();
         $categorias = factory(App\Categoria::class, 3) -> create();
-        
+        $productos = factory(App\Producto::class,5) -> create();
+
     }
 
 }
