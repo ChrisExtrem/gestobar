@@ -7,9 +7,11 @@ $factory->define(App\Producto::class, function (Faker $faker) {
         'nombre' => $faker->name,
         'descripcion' => str_random(50),
         'precio' => $faker -> randomFloat(2,0,200),
+        'imagen' => $faker -> url(),
 
         'categoria_id' => function () {
             return factory(App\Categoria::class)->create()->id;
         },
+
     ];
 });

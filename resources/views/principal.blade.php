@@ -15,7 +15,7 @@
         </div class="row">
         <div class="row my-2"><!--Row Inferior-->
                 <div class="col col-md-6">
-                        <img  id="imgbar"class="my-2" src="img/bar.jpg" alt="ImagenGrande"> <!--453x250-->
+                        <img  id="imgbar"class="my-2" src="https://i.ibb.co/fdryx2c/Diagrama-Relacional-Gesto-Bar.png" alt="ImagenGrande"> <!--453x250-->
                 </div>
                 <div class="col col-md-6">
                     <article>

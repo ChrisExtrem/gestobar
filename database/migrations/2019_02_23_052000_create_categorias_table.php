@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLineasTable extends Migration
+class CreateCategoriasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateLineasTable extends Migration
      */
     public function up()
     {
-        Schema::create('lineas', function (Blueprint $table) {
+        Schema::create('categorias', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+
+            $table->string('descripcion');
         });
     }
 
@@ -26,6 +27,6 @@ class CreateLineasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lineas');
+        Schema::dropIfExists('categorias');
     }
 }

@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Str;
 
-class CreateCategoriasTable extends Migration
+class CreateReservasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +14,13 @@ class CreateCategoriasTable extends Migration
      */
     public function up()
     {
-        Schema::create('categorias', function (Blueprint $table) {
+        Schema::create('reservas', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
 
-            $table->string('descripcion');
+            $table->string('cliente',100);
+            $table->integer('mesa')->unsigned();
+            $table->integer('capacidad')->unsigned();
+            $table->dateTime('fecha');
         });
     }
 
@@ -28,6 +31,6 @@ class CreateCategoriasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categorias');
+        Schema::dropIfExists('reservas');
     }
 }

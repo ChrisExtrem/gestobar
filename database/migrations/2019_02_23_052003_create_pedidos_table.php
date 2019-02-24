@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFacturasTable extends Migration
+class CreatePedidosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class CreateFacturasTable extends Migration
      */
     public function up()
     {
-        Schema::create('facturas', function (Blueprint $table) {
+        Schema::create('pedidos', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
 
-            //$table->integer('total');
+            $table->string('cliente',100);
+            $table->integer('mesa')->unsigned();
 
-            //$table->integer('pedido_id')->unsigned();
-            //$table->foreign('pedido_id')->references('id')->on('pedidos');
+            $table->integer('reserva_id')->unsigned();
+            $table->foreign('reserva_id')->references('id')->on('reservas');
+
         });
     }
 
@@ -31,6 +32,6 @@ class CreateFacturasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('facturas');
+        Schema::dropIfExists('pedidos');
     }
 }

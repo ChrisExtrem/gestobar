@@ -21,9 +21,14 @@ class DatabaseSeeder extends Seeder
 
         //Seed usando Factorias
         $users = factory(App\User::class, 3)->create();
-        $categorias = factory(App\Categoria::class, 3) -> create();
-        $productos = factory(App\Producto::class,5) -> create();
 
+        $categorias = factory(App\Categoria::class,3) -> create();
+        $productos = factory(App\Producto::class,5) -> create();
+        $reservas = factory(App\Reserva::class) -> create();
+        $pedidos = factory(App\Pedido::class) -> create();
+
+        $facturas = factory(App\Factura::class,2) -> create();
+        $lineas = factory(App\Linea::class) -> create();
     }
 
 }
