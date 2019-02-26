@@ -32,3 +32,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/principal', 'HomeController@principal')->name('principal');
 
 Route::get('/usuario', 'HomeController@usuario')->name('usuario');
+
+Route::resource('pedido', 'PedidoController');

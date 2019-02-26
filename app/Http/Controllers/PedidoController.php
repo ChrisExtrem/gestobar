@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Categoria;
+use App\Producto;
 
-class CategoriaController extends Controller
+class PedidoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,7 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        $categorias=Categoria::all();
-        return view('categoria.lista',compact('categorias'));
+       
     }
 
     /**
@@ -25,7 +25,9 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+        $categorias=Categoria::all();
+        $productos=Producto::all();
+        return view('pedido.create',compact('categorias','productos'));
     }
 
     /**

@@ -5,6 +5,6 @@ use Illuminate\Support\Str;
 
 $factory->define(App\Categoria::class, function (Faker $faker) {
     return [
-        'descripcion' => str_random(50)
+        'descripcion' => str_random(8)
     ];
 });
