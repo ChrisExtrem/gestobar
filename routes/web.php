@@ -15,7 +15,7 @@
     return view('welcome');
 });*/
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     if(Auth::check())
     {
         return view('usuario');
@@ -23,6 +23,10 @@ Route::get('/', function () {
         return view('principal');
     }
 
+});*/
+
+Route::get('/',function(){
+    return view('main');
 });
 
 Auth::routes();

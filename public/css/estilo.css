@@ -47,3 +47,7 @@ body {font-family: Arial;}
   from {opacity: 0;}
   to {opacity: 1;}
 }
+
+.navbar-laravel {
+    box-shadow: none
+}

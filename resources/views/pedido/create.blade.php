@@ -1,33 +1,69 @@
-@extends('layouts.main')
+@extends('layouts.basic')
 
 @section('head_content')
-    <link rel="stylesheet" type="text/css" href="{{asset('css/estilo.css')}}"/>
+
+@endsection
+
+@section('ruta_items')
+
 @endsection
 
 @section('content')
-<h3>Fade in Tabs</h3>
 
-<div class="tab">
-  @foreach($categorias as $categoria)
-    <button class="tablinks" onclick="openTab(event, '{{$categoria->descripcion}}')">{{$categoria->descripcion}}</button>
-  @endforeach
-</div>
+<div class="container"><!--Inicio Container-->
+    <div class="row"><!--Row Superior-->
+        <div class="col col-md-12">
+            <h3>Menú de Productos</h3>
+        </div>
+    </div><!--End Row Superior-->
+    <div class="row"><!--Row Media-->
+        <div class="col col-md-12">
+            <div class="tab">
+                @foreach($categorias as $categoria)
+                    <button class="tablinks" onclick="openTab(event, '{{$categoria->descripcion}}')">{{$categoria->descripcion}}</button>
+                @endforeach
+            </div>
+        </div>
+    </div><!--End Row Media-->
+    <div class="row"><!--Row Inferior-->
+        <div class="col col-md-12">
+            @foreach($categorias as $categoria)
+                <div id="{{$categoria->descripcion}}" class="tabcontent">
+                    <h3>{{$categoria->descripcion}}</h3>
+                    <div class="row"><!--Row Interna de la Pestaña-->
+                        @foreach($productos as $producto)
+                            @if ($producto->categoria_id==$categoria->id)
 
-@foreach($categorias as $categoria)
-    <div id="{{$categoria->descripcion}}" class="tabcontent">
-        <h3>{{$categoria->descripcion}}</h3>
-        @foreach($productos as $producto)
-            @if ($producto->categoria_id==$categoria->id)
-                <h6>Id de Producto:{{$producto->id}}</h6>
-                <p>Nombre de Producto:{{$producto->nombre}}</p>
-            @endif
-        @endforeach
-    </div>
-@endforeach
+                                <div class="col-md-4">
+                                    <div class="card"><!--Inicio Card Producto-->
+                                        <img src="#" alt="" class="mt-3 rounded-circle card-img-top mx-auto">
+                                        <br>
+                                        <div class="card-body"><!--Inicio Card Body-->
+                                            <h5 class="card-title text-center">{{$producto->nombre}}}</h5>
+                                            <p class="card-text">
+                                            <b>Descripcion:</b>{{$producto->descripcion}}}<br>
+                                            <b>Precio: $</b>{{$producto->precio}}}<br>
+                                            </p>
+                                        </div><!--Fin Card Body-->
+                                        <form action="store">
+                                            <label for="tentacles">Cantidad:</label>
+                                            <input type="number" id="tentacles" name="cantidad" min="1" max="100">
+                                            <input type="checkbox" name="check" value="true">
+                                            <input type="submit" value="Submit">
 
+                                        </form>
+                                    </div><!--Fin Card Producto-->
+                                    <br>
+                                </div>
 
-        
-
+                            @endif
+                        @endforeach
+                    </div><!--Fin Row Interna de la Pestaña-->
+                </div>
+            @endforeach
+        </div>
+    </div><!--End Row Inferior-->
+</div><!--Fin Container-->
 
 <script>
 function openTab(evt, tabName) {

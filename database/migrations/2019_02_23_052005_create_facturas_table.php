@@ -17,7 +17,7 @@ class CreateFacturasTable extends Migration
             $table->increments('id');
 
             $table->float('total',8,2);
-
+            $table->dateTime('fecha');
             $table->integer('pedido_id')->unsigned();
             $table->foreign('pedido_id')->references('id')->on('pedidos');
         });
