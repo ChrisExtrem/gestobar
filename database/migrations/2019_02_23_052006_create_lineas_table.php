@@ -15,7 +15,6 @@ class CreateLineasTable extends Migration
     {
         Schema::create('lineas', function (Blueprint $table) {
             $table->increments('id');
-            //$table->timestamps();
 
             $table->integer('cantidad')->unsigned();
             $table->float('precio',8,2);

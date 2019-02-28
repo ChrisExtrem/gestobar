@@ -35,14 +35,20 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/home', 'HomeController@buscar')->name('buscar'); //llamada desde un botton en main
 
-//Route::post('/home', 'HomeController@buscarPedido')->name('home.buscarPedido'); //llamada desde un botton en main
-
-//Route::get('/home', 'HomeController@buscarFactura')->name('home.buscarFactura'); //llamada desde un botton en main
-
-Route::get('pedido/create/{id}', [ //ruta con parametros
-    'as' => 'pedido.create', //ubicacion de la vista
-    'uses' => 'PedidoController@create'  //Controlador@funcion
+Route::get('pedido/create/{id}', [
+    'as' => 'pedido.create',
+    'uses' => 'PedidoController@create'
 ]);
 
 Route::resource('pedido', 'PedidoController', ['except' => 'create']);
 
+//Route::post('/pedido/store', 'PedidoController@store')->name('pedido.store'); //llamada desde un botton en main
+
+/*Route::resource('pedido', 'PedidoController')->except([
+    'create', 'store', 'update', 'destroy'
+]);
+
+Route::post('pedido/store', [
+    'as' => 'pedido.store',
+    'uses' => 'PedidoController@store'
+]);*/

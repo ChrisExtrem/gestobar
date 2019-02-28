@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use App\Categoria;
 use App\Producto;
 use App\Pedido;
+use App\Linea;
 
 class PedidoController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -40,7 +42,24 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $id_pedidp=$request->id;
+        $productos_nombre=$request->nombres;
+        $productos_cantidad=$request->productos;
+        foreach ($productos_cantidad as $cant) {
+            $i=0;
+            if(isset($cant))
+            {
+                $temp=Producto::where('nombre',$productos_nombre[$i])->first();
+                $linea=Linea::make();
+                $linea->cantidad=$cant;
+                $linea->producto_id=$temp->id;
+                $linea->precio=$temp->precio;
+                $linea->pedido_id=$request->pedido_id;
+                $linea->save();
+            }
+            $i=$i+1;
+        }
+        
     }
 
     /**

@@ -37,17 +37,16 @@
             @endauth
             @guest
             <div class="row my-2"><!--Row Inferior-->
-                <div class="col col-md-6">
-                        <img  id="imgbar"class="my-2" src="https://i.ibb.co/fdryx2c/Diagrama-Relacional-Gesto-Bar.png" alt="ImagenGrande"> <!--453x250-->
+                <div class="col-md-6">
+                    <img id="imgbar"class="my-2 img-fluid" src="{{asset('img/resto-bar.webp')}}" alt="ImagenGrande"> <!--453x250-->
                 </div>
-                <div class="col col-md-6">
+                <div class="col-md-6">
                     <article>
                         <p>
                             <b>La Solucion a su negocio</b><br>
                             Brindamos un software que permite gestionar con gran facilidad los pedidos desde las mesas dentro de su local.<br>
                             Ademas de aportar un soporte para el seguimiento para la reposicion del stock en su local. <br>
                             Sus comandas nunca quedaran desatendidas gracias a nuestras implementaciones de administracion.
-
                         </p>
                     </article>
                 </div>

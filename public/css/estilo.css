@@ -69,3 +69,13 @@ input[type=checkbox]
   font-size: 110%;
   display: inline;
 }
+
+.card-img-top{
+    height: 10rem;
+    width: 10rem;
+}
+
+.imgbar{
+    height: 250px;
+    width: 453px;
+}
