@@ -3,14 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Categoria;
-use App\Producto;
-use App\Pedido;
-use App\Linea;
+use App\Reserva;
 
-class PedidoController extends Controller
+class ReservaController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -18,8 +14,8 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        $pedidos=Pedido::all();
-        return view('pedido.index',compact('pedidos'));
+        $reservas=Reserva::all();
+        return view('reserva.index',compact('reservas'));
     }
 
     /**
@@ -27,12 +23,9 @@ class PedidoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create()
     {
-        $categorias=Categoria::all();
-        $productos=Producto::all();
-        $pedido=Pedido::find($id);
-        return view('pedido.create',compact('categorias','productos','pedido'));
+        //
     }
 
     /**
@@ -43,24 +36,7 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
-        $id_pedido=$request->id;
-        $productos_nombre=$request->nombres;
-        $productos_cantidad=$request->productos;
-        foreach ($productos_cantidad as $cant) {
-            $i=0;
-            if(isset($cant))
-            {
-                $temp=Producto::where('nombre',$productos_nombre[$i])->first();
-                $linea=Linea::make();
-                $linea->cantidad=$cant;
-                $linea->producto_id=$temp->id;
-                $linea->precio=$temp->precio;
-                $linea->pedido_id=$request->id;
-                $linea->save();
-            }
-            $i=$i+1;
-        }
-
+        //
     }
 
     /**

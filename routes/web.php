@@ -42,6 +42,16 @@ Route::get('pedido/create/{id}', [
 
 Route::resource('pedido', 'PedidoController', ['except' => 'create']);
 
+Route::resource('reserva', 'ReservaController');
+
+Route::resource('factura', 'FacturaController');
+
+
+
+
+
+
+
 //Route::post('/pedido/store', 'PedidoController@store')->name('pedido.store'); //llamada desde un botton en main
 
 /*Route::resource('pedido', 'PedidoController')->except([

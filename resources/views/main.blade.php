@@ -21,9 +21,9 @@
             <div class="row"><!--Row Media-->
                 <div class="col col-md-12">
                     <div class="btn-group btn-group-justified  d-flex justify-content-center" role="group" aria-label="Justified button group">
-                        <a class="btn btn-light" role="button" href="#">Reservas</a>
-                        <a class="btn btn-light" role="button" href="#">Pedidos</a>
-                        <a class="btn btn-light" role="button" href="#">Facturas</a>
+                    <a class="btn btn-light" role="button" href="{{route('reserva.index')}}">Reservas</a>
+                    <a class="btn btn-light" role="button" href="{{route('pedido.index')}}">Pedidos</a>
+                    <a class="btn btn-light" role="button" href="{{route('factura.index')}}">Facturas</a>
                     </div>
                 </div>
             </div><!--Fin Row Media-->
