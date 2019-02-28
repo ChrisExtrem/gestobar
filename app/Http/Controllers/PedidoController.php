@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Categoria;
 use App\Producto;
+use App\Pedido;
 
 class PedidoController extends Controller
 {
@@ -15,7 +16,7 @@ class PedidoController extends Controller
      */
     public function index()
     {
-       
+
     }
 
     /**
@@ -23,11 +24,12 @@ class PedidoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
         $categorias=Categoria::all();
         $productos=Producto::all();
-        return view('pedido.create',compact('categorias','productos'));
+        $pedido=Pedido::find($id);
+        return view('pedido.create',compact('categorias','productos','pedido'));
     }
 
     /**

@@ -25,11 +25,11 @@
             </div>
         </div>
     </div><!--End Row Media-->
+    <form action="">
     <div class="row"><!--Row Inferior-->
         <div class="col col-md-12">
             @foreach($categorias as $categoria)
-                <div id="{{$categoria->descripcion}}" class="tabcontent">
-                    <h3>{{$categoria->descripcion}}</h3>
+                <div id="{{$categoria->descripcion}}" class="tabcontent"><!--Pestaña-->
                     <div class="row"><!--Row Interna de la Pestaña-->
                         @foreach($productos as $producto)
                             @if ($producto->categoria_id==$categoria->id)
@@ -45,13 +45,12 @@
                                             <b>Precio: $</b>{{$producto->precio}}}<br>
                                             </p>
                                         </div><!--Fin Card Body-->
-                                        <form action="store">
-                                            <label for="tentacles">Cantidad:</label>
-                                            <input type="number" id="tentacles" name="cantidad" min="1" max="100">
-                                            <input type="checkbox" name="check" value="true">
-                                            <input type="submit" value="Submit">
-
-                                        </form>
+                                        <div class="botonera form-inline">
+                                            <label class="mx-2" for="text">Cantidad: </label>
+                                            <input class="mx-2 form-control input-sm" type="number" id="#" name="#" min="1" max="100">
+                                            <span> Pedir: </span>
+                                            <input class="mx-2 align-self-center" type="checkbox" name="check" value="true">
+                                        </div>
                                     </div><!--Fin Card Producto-->
                                     <br>
                                 </div>
@@ -63,6 +62,12 @@
             @endforeach
         </div>
     </div><!--End Row Inferior-->
+    <div class="row mt-3"><!--Row Submit-->
+        <div class="col col-md-12 form-inline">
+            <b>Id Pedido: </b><label name="id_pedido" value="{{$pedido->id}}" for="#">{{$pedido->id}}</label><b class="ml-3">Cliente: </b>{{$pedido->cliente}} <b class="ml-3">Mesa: </b>{{$pedido->mesa}}
+            <input class="ml-3 btn btn-light active" type="submit" value="Pedir">
+        </div>
+    </div><!--Row Submit-->
 </div><!--Fin Container-->
 
 <script>

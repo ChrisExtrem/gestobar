@@ -5,13 +5,13 @@
         <section>
             <div class="row my-2"><!--Row Superior-->
                 <div class="col col-md-12">
-                    <form id="myForm" class="form-inline justify-content-center">
+                <form id="myForm" class="form-inline justify-content-center" action="{{route('buscar')}}" method="POST">
+                        @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control" id="busqueda" placeholder="Inserte Codigo de Reserva">
-
-                        <button type="submit" class="btn mr-1 btn-light">Ir al Pedido</button>
+                            <input type="text" name="id_reserva" class="form-control" placeholder="Inserte Codigo de Reserva">
+                            <button type="submit" name="submit" value="pedido" class="btn mr-1 btn-light">Ir al Pedido</button>
                         @auth
-                        <button type="submit" class="btn btn-light">Ir a Factura</button>
+                            <button type="submit" name="submit" value="factura" class="btn btn-light">Ir a Factura</button>
                         @endauth
                         </div>
                     </form>

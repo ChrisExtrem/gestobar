@@ -39,7 +39,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <nav aria-label="breadcrumb" class="navbar navbar-expand-md navbar-light navbar-laravel p-0"> <!--BreadCrumb-->
+                    <nav aria-label="breadcrumb" class="navGETbar navbar-expand-md navbar-light navbar-laravel p-0"> <!--BreadCrumb-->
                         <div class="container">
                             <ol class="breadcrumb py-0 mb-0" style="background-color:white">
                                 <li class="breadcrumb-item"><a class="navbar-brand" href="{{ url('/') }}">Gestobar</a></li>
